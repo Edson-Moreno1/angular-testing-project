@@ -11,29 +11,16 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
   title = 'angular-testing-project';
 Task: any;
+newTask: any;
 
-newTask: string;
-constructor() {
-  this.newTask = '';
-}
+
+
 
   addTask(task: string) {
-    if (!task.trim()){
-      return;
-    }
-
-    const tasks = this.getTasks();
-    tasks.push(task);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 
   deleteTask(task: string) {
-    const tasks = this.getTasks();
-    const index = tasks.indexOf(task);
-    if (index !== -1) {
-      tasks.splice(index, 1);
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-    }
+   
   }
 
   getTasks(): string[] {
