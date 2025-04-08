@@ -1,3 +1,16 @@
-<div>
-  <h1>Welcome to {{ title }}!</h1>
+<app-task-list></app-task-list>
+<div class="container-3">
+  @for (t of Task; track t) {
+    <p>{{t}}</p>
+  }
+
+</div>
+<div class="container">
+  <input type="text" [(ngModel)]="newTask" (keyup.enter)="addTask(newTask)">
+  <button type="button" (click)="addTask(newTask)">Agregar</button>
+</div>
+
+<div class="container-2">
+  <input type="text" > 
+  <button type="button" >Actualizar</button>
 </div>
